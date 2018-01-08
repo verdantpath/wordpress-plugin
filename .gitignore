@@ -1,0 +1,6 @@
+#folders
+.sasscache
+
+#files
+thumbs.db
+.DS_Store
