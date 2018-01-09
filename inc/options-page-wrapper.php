@@ -23,27 +23,10 @@
 						<div class="inside">
               <table class="form-table">
               	<tr>
-              		<th class="row-title"><?php esc_attr_e( 'Table header cell #1', 'WpAdminStyle' ); ?></th>
-              		<th><?php esc_attr_e( 'Table header cell #2', 'WpAdminStyle' ); ?></th>
+              		<td></td>
+              		<td><?php esc_attr_e( 'Table header cell #2', 'WpAdminStyle' ); ?></td>
               	</tr>
-              	<tr valign="top">
-              		<td scope="row"><label for="tablecell"><?php esc_attr_e(
-              					'Table data cell #1, with label', 'WpAdminStyle'
-              				); ?></label></td>
-              		<td><?php esc_attr_e( 'Table Cell #2', 'WpAdminStyle' ); ?></td>
-              	</tr>
-              	<tr valign="top" class="alternate">
-              		<td scope="row"><label for="tablecell"><?php esc_attr_e(
-              					'Table Cell #3, with label and class', 'WpAdminStyle'
-              				); ?> <code>alternate</code></label></td>
-              		<td><?php esc_attr_e( 'Table Cell #4', 'WpAdminStyle' ); ?></td>
-              	</tr>
-              	<tr valign="top">
-              		<td scope="row"><label for="tablecell"><?php esc_attr_e(
-              					'Table Cell #5, with label', 'WpAdminStyle'
-              				); ?></label></td>
-              		<td><?php esc_attr_e( 'Table Cell #6', 'WpAdminStyle' ); ?></td>
-              	</tr>
+
               </table>
 						</div>
 						<!-- .inside -->
