@@ -1,7 +1,7 @@
 <div class="wrap">
 
 	<div id="icon-options-general" class="icon32"></div>
-	<h1><?php esc_attr_e( 'Heading', 'WpAdminStyle' ); ?></h1>
+	<h1><?php esc_attr_e( 'The Official Treehouse Badges Plugin', 'WpAdminStyle' ); ?></h1>
 
 	<div id="poststuff">
 
@@ -17,7 +17,7 @@
 						<div class="handlediv" title="Click to toggle"><br></div>
 						<!-- Toggle -->
 
-						<h2 class="hndle"><span><?php esc_attr_e( 'Main Content Header', 'WpAdminStyle' ); ?></span>
+						<h2 class="hndle"><span><?php esc_attr_e( 'Let\'s Get Started', 'WpAdminStyle' ); ?></span>
 						</h2>
 
 						<div class="inside">
