@@ -21,8 +21,30 @@
 						</h2>
 
 						<div class="inside">
-							<p><?php esc_attr_e( 'WordPress started in 2003 with a single bit of code to enhance the typography of everyday writing and with fewer users than you can count on your fingers and toes. Since then it has grown to be the largest self-hosted blogging tool in the world, used on millions of sites and seen by tens of millions of people every day.',
-							                     'WpAdminStyle' ); ?></p>
+              <table class="form-table">
+              	<tr>
+              		<th class="row-title"><?php esc_attr_e( 'Table header cell #1', 'WpAdminStyle' ); ?></th>
+              		<th><?php esc_attr_e( 'Table header cell #2', 'WpAdminStyle' ); ?></th>
+              	</tr>
+              	<tr valign="top">
+              		<td scope="row"><label for="tablecell"><?php esc_attr_e(
+              					'Table data cell #1, with label', 'WpAdminStyle'
+              				); ?></label></td>
+              		<td><?php esc_attr_e( 'Table Cell #2', 'WpAdminStyle' ); ?></td>
+              	</tr>
+              	<tr valign="top" class="alternate">
+              		<td scope="row"><label for="tablecell"><?php esc_attr_e(
+              					'Table Cell #3, with label and class', 'WpAdminStyle'
+              				); ?> <code>alternate</code></label></td>
+              		<td><?php esc_attr_e( 'Table Cell #4', 'WpAdminStyle' ); ?></td>
+              	</tr>
+              	<tr valign="top">
+              		<td scope="row"><label for="tablecell"><?php esc_attr_e(
+              					'Table Cell #5, with label', 'WpAdminStyle'
+              				); ?></label></td>
+              		<td><?php esc_attr_e( 'Table Cell #6', 'WpAdminStyle' ); ?></td>
+              	</tr>
+              </table>
 						</div>
 						<!-- .inside -->
 
