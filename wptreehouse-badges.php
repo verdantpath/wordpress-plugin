@@ -37,7 +37,10 @@ function wptreehouse_badges_menu() {
 add_action( 'admin_menu', 'wptreehouse_badges_menu' );
 
 function wptreehouse_badges_options_page() {
-
+  if( !current_user_can( 'manage_options' ) ) {
+    wp_die( 'You do not have sufficient permission to access this page' );
+  }
+  echo '<p>Welcome to our plugin page!</p>';
 }
 
 ?>
