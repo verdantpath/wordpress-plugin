@@ -21,13 +21,54 @@
 						</h2>
 
 						<div class="inside">
+              <form method="post" action="">
               <table class="form-table">
               	<tr>
-              		<td></td>
-              		<td><?php esc_attr_e( 'Table header cell #2', 'WpAdminStyle' ); ?></td>
+              		<td><label for="wptreehouse_username">Treehouse username</label></td>
+              		<td><input name="wptreehouse_username" id="wptreehouse_username" type="text" value="" class="regular-text" /></td>
               	</tr>
 
               </table>
+              <p><input class="button-primary" type="submit" name="Example" value="<?php esc_attr_e( 'Example Primary Button' ); ?>" /></p>
+
+            </form>
+						</div>
+						<!-- .inside -->
+
+					</div>
+					<!-- .postbox -->
+
+          <div class="postbox">
+
+						<div class="handlediv" title="Click to toggle"><br></div>
+						<!-- Toggle -->
+
+						<h2 class="hndle"><span><?php esc_attr_e( 'Most Recent Badges', 'WpAdminStyle' ); ?></span>
+						</h2>
+
+						<div class="inside">
+              <p>Below are your 20 most recent badges</p>
+
+              <ul class="wptreehouse-badges">
+
+              	<?php for( $i = 0; $i < 20; $i++ ): ?>
+              	<li>
+              		<ul>
+              			<li>
+              				<img width="120px" src="<?php echo $plugin_url . '/images/wp-badge.png'; ?>">
+              			</li>
+              			<li class="wptreehouse-badge-name">
+              				<a href="#">Badge Name</a>
+              			</li>
+              			<li class="wptreehouse-project-name">
+              				<a href="#">Project Name</a>
+              			</li>
+              		</ul>
+              	</li>
+              	<?php endfor; ?>
+
+              </ul>
+
 						</div>
 						<!-- .inside -->
 
@@ -50,13 +91,19 @@
 						<div class="handlediv" title="Click to toggle"><br></div>
 						<!-- Toggle -->
 
-						<h2 class="hndle"><span><?php esc_attr_e(
-									'Sidebar Content Header', 'WpAdminStyle'
-								); ?></span></h2>
+            <h3><span>Mike the Frog's Profile</span></h3>
+            <div class="inside">
 
-						<div class="inside">
-							<p><?php esc_attr_e( 'Everything you see here, from the documentation to the code itself, was created by and for the community. WordPress is an Open Source project, which means there are hundreds of people all over the world working on it. (More than most commercial platforms.) It also means you are free to use it for anything from your cat’s home page to a Fortune 500 web site without paying anyone a license fee and a number of other important freedoms.',
-							                     'WpAdminStyle' ); ?></p>
+            	<p><img width="100%" class="wptreehouse-gravatar" src="<?php echo $plugin_url . '/images/mike-the-frog.png'; ?>" alt="Mike the Frog Gravatar"></p>
+              <ul class="wptreehouse-badges-and-points">
+
+              		<li>Badges: <strong>200</strong></li>
+              		<li>Points: <strong>10000</strong></li>
+
+              </ul>
+            </div> <!-- .inside -->
+
+
 						</div>
 						<!-- .inside -->
 
