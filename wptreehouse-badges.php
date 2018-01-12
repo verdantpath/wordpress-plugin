@@ -50,6 +50,14 @@ function wptreehouse_badges_options_page() {
 
   global $plugin_url;
 
+  if( isset( $_POST['wptreehouse_form_submitted'] ) ) {
+    $hidden_field = esc_html( $_POST['wptreehouse_form_submitted'] );
+    if( $hidden_field == 'Y' ) {
+      $wptreehouse_username = esc_html( $_POST['wptreehouse_username'] );
+
+    }
+  }
+
   require( 'inc/options-page-wrapper.php' );
 }
 

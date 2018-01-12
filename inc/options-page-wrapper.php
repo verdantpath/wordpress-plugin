@@ -12,6 +12,8 @@
 
 				<div class="meta-box-sortables ui-sortable">
 
+          <?php if( !isset( $wptreehouse_username ) || $wptreehouse_username == '' ): ?>
+
 					<div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
@@ -21,7 +23,8 @@
 						</h2>
 
 						<div class="inside">
-              <form method="post" action="">
+              <form name="wptreehouse_username_form" method="post" action="">
+                <input type="hidden" name="wptreehouse_form_submitted" value="Y">
               <table class="form-table">
               	<tr>
               		<td><label for="wptreehouse_username">Treehouse username</label></td>
@@ -29,7 +32,7 @@
               	</tr>
 
               </table>
-              <p><input class="button-primary" type="submit" name="Example" value="<?php esc_attr_e( 'Example Primary Button' ); ?>" /></p>
+              <p><input class="button-primary" type="submit" name="wptreehouse_username_submit" value="<?php esc_attr_e( 'Example Primary Button' ); ?>" /></p>
 
             </form>
 						</div>
@@ -37,6 +40,8 @@
 
 					</div>
 					<!-- .postbox -->
+
+        <?php else: ?>
 
           <div class="postbox">
 
@@ -75,6 +80,8 @@
 					</div>
 					<!-- .postbox -->
 
+        <?php endif; ?>
+
 				</div>
 				<!-- .meta-box-sortables .ui-sortable -->
 
@@ -85,6 +92,8 @@
 			<div id="postbox-container-1" class="postbox-container">
 
 				<div class="meta-box-sortables">
+
+          <?php if( isset( $wptreehouse_username ) || $wptreehouse_username != '' ): ?>
 
 					<div class="postbox">
 
@@ -106,6 +115,8 @@
 
 						</div>
 						<!-- .inside -->
+
+          <?php endif; ?>
 
 					</div>
 					<!-- .postbox -->
