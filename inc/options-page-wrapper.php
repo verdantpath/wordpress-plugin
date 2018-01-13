@@ -93,7 +93,7 @@
 
 				<div class="meta-box-sortables">
 
-          <?php if( isset( $wptreehouse_username ) || $wptreehouse_username != '' ): ?>
+          <?php if( isset( $wptreehouse_username ) && $wptreehouse_username != '' ): ?>
 
 					<div class="postbox">
 
@@ -110,6 +110,16 @@
               		<li>Points: <strong>10000</strong></li>
 
               </ul>
+
+              <form name="wptreehouse_username_form" method="post" action="">
+                <input type="hidden" name="wptreehouse_form_submitted" value="Y">
+                <p><label for="wptreehouse_username">Username</label></p>
+              	<p>
+                  <input name="wptreehouse_username" id="wptreehouse_username" type="text" value="<?php echo $wptreehouse_username; ?>" />
+                  <input class="button-primary" type="submit" name="wptreehouse_username_submit" value="<?php esc_attr_e( 'Update' ); ?>" />
+                </p>
+              </form>
+
             </div> <!-- .inside -->
 
 
