@@ -60,13 +60,13 @@
               	<li>
               		<ul>
               			<li>
-              				<img width="120px" src="<?php echo $plugin_url . '/images/wp-badge.png'; ?>">
+              				<img width="120px" src="<?php echo $wptreehouse_profile->{'badges'}[$i]->{'icon_url'}; ?>">
               			</li>
               			<li class="wptreehouse-badge-name">
-              				<a href="#">Badge Name</a>
+              				<a href="#"><?php echo $wptreehouse_profile->{'badges'}[$i]->{'name'}; ?></a>
               			</li>
               			<li class="wptreehouse-project-name">
-              				<a href="#">Project Name</a>
+              				<a href="#"><?php echo $wptreehouse_profile->{'badges'}[$i]->{'courses'}[0]->{'title'}; ?></a>
               			</li>
               		</ul>
               	</li>
@@ -79,6 +79,25 @@
 
 					</div>
 					<!-- .postbox -->
+
+          <div class="postbox">
+
+						<div class="handlediv" title="Click to toggle"><br></div>
+						<!-- Toggle -->
+
+						<h2 class="hndle"><span><?php esc_attr_e( 'Most Recent Badges', 'WpAdminStyle' ); ?></span>
+						</h2>
+
+						<div class="inside">
+
+              <p><?php echo $wptreehouse_profile->{'name'}; ?></p>
+              <p><?php echo $wptreehouse_profile->{'profile_url'}; ?></p>
+              <p><?php echo $wptreehouse_profile->{'badges'}[1]->{'courses'}[1]->{'title'}; ?></p>
+
+              <pre><code><?php var_dump( $wptreehouse_profile ); ?></code></pre>
+
+            </div>
+          </div>
 
         <?php endif; ?>
 
@@ -120,7 +139,7 @@
                 </p>
               </form>
 
-            </div> <!-- .inside -->
+            <!--</div>--> <!-- .inside -->
 
 
 						</div>
