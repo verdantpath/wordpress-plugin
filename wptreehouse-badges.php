@@ -18,6 +18,7 @@
 
 $plugin_url = WP_PLUGIN_URL . '/wptreehouse-badges';
 $options = array();
+$display_json = false;
 
 /*
 * Add a link to our pluain in the admin menu
@@ -51,6 +52,7 @@ function wptreehouse_badges_options_page() {
 
   global $plugin_url;
   global $options;
+  global $display_json;
 
   if( isset( $_POST['wptreehouse_form_submitted'] ) ) {
     $hidden_field = esc_html( $_POST['wptreehouse_form_submitted'] );
@@ -79,6 +81,40 @@ function wptreehouse_badges_options_page() {
 
   require( 'inc/options-page-wrapper.php' );
 }
+
+class Wptreehouse_Badges_Widget extends WP_Widget {
+
+	function wptreehouse_badges_widget() {
+		// Instantiate the parent object
+		parent::__construct( false, 'Official Treehouse Badges Widget' );
+	}
+
+	function widget( $args, $instance ) {
+		// Widget output
+
+    extract( $args );
+    $title = apply_filter( 'widget_title', $instance['title'] );
+
+    $options = get_option( 'wptreehouse_badges' );
+    $wptreehouse_profile = $options['wptreehouse_profile'];
+
+    require( 'inc/front-end.php' );
+	}
+
+	function update( $new_instance, $old_instance ) {
+		// Save widget options
+	}
+
+	function form( $instance ) {
+		// Output admin widget options form
+	}
+}
+
+function myplugin_register_widgets() {
+	register_widget( 'MyNewWidget' );
+}
+
+add_action( 'widgets_init', 'myplugin_register_widgets' );
 
 function wptreehouse_badges_get_profile( $wptreehouse_username ) {
   $json_feed_url = "https://teamtreehouse.com/" . $wptreehouse_username . ".json";
