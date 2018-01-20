@@ -93,7 +93,7 @@ class Wptreehouse_Badges_Widget extends WP_Widget {
 		// Widget output
 
     extract( $args );
-    $title = apply_filter( 'widget_title', $instance['title'] );
+    $title = apply_filters( 'widget_title', $instance['title'] );
 
     $options = get_option( 'wptreehouse_badges' );
     $wptreehouse_profile = $options['wptreehouse_profile'];
@@ -103,18 +103,27 @@ class Wptreehouse_Badges_Widget extends WP_Widget {
 
 	function update( $new_instance, $old_instance ) {
 		// Save widget options
+
+    $instance = $old_instance;
+    $instance['title'] = strip_tags($new_instance['title']);
+
+    return $instance;
 	}
 
 	function form( $instance ) {
 		// Output admin widget options form
+
+    $title = esc_attr($instance['title']);
+
+    require( 'inc/widget-fields.php' );
 	}
 }
 
-function myplugin_register_widgets() {
-	register_widget( 'MyNewWidget' );
+function wptreehouse_badges_register_widgets() {
+	register_widget( 'Wptreehouse_Badges_Widget' );
 }
 
-add_action( 'widgets_init', 'myplugin_register_widgets' );
+add_action( 'widgets_init', 'wptreehouse_badges_register_widgets' );
 
 function wptreehouse_badges_get_profile( $wptreehouse_username ) {
   $json_feed_url = "https://teamtreehouse.com/" . $wptreehouse_username . ".json";
