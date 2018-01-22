@@ -95,7 +95,7 @@ class Wptreehouse_Badges_Widget extends WP_Widget {
     extract( $args );
     $title = apply_filters( 'widget_title', $instance['title'] );
     $num_badges = $instance['num_badges'];
-    $display_tooltips = $instance['display_tooltips'];
+    $display_tooltip = $instance['display_tooltip'];
 
     $options = get_option( 'wptreehouse_badges' );
     $wptreehouse_profile = $options['wptreehouse_profile'];
@@ -109,7 +109,7 @@ class Wptreehouse_Badges_Widget extends WP_Widget {
     $instance = $old_instance;
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['num_badges'] = strip_tags($new_instance['num_badges']);
-    $instance['display_badges'] = strip_tags($new_instance['display_badges']);
+    $instance['display_tooltip'] = strip_tags($new_instance['display_tooltip']);
 
     return $instance;
 	}
@@ -119,7 +119,7 @@ class Wptreehouse_Badges_Widget extends WP_Widget {
 
     $title = esc_attr($instance['title']);
     $num_badges = esc_attr($instance['num_badges']);
-    $display_badges = esc_attr($instance['display_badges']);
+    $display_tooltip = esc_attr($instance['display_tooltip']);
 
     $options = get_option( 'wptreehouse_badges' );
     $wptreehouse_profile = $options['wptreehouse_profile'];
@@ -145,9 +145,15 @@ function wptreehouse_badges_get_profile( $wptreehouse_username ) {
   return $wptreehouse_profile;
 }
 
-function wptreehouse_badges_styles() {
-  wp_enqueue_style( 'wptreehouse_badges_styles', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
+function wptreehouse_badges_backend_styles() {
+  wp_enqueue_style( 'wptreehouse_badges_backend_css', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
 }
-add_action( 'admin_head', 'wptreehouse_badges_styles' );
+add_action( 'admin_head', 'wptreehouse_badges_backend_styles' );
+
+function wptreehouse_badges_frontend_scripts_and_styles() {
+  wp_enqueue_style( 'wptreehouse_badges_frontend_css', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
+  wp_enqueue_script( 'wptreehouse_badges_frontend_js', plugins_url( 'wptreehouse-badges/wptreehouse-badges.js' ), array('jquery'), '', true );
+}
+add_action( 'wp_enqueue_scripts', 'wptreehouse_badges_frontend_scripts_and_styles' );
 
 ?>
