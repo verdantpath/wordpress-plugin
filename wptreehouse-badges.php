@@ -131,8 +131,12 @@ class Wptreehouse_Badges_Widget extends WP_Widget {
 function wptreehouse_badges_register_widgets() {
 	register_widget( 'Wptreehouse_Badges_Widget' );
 }
-
 add_action( 'widgets_init', 'wptreehouse_badges_register_widgets' );
+
+function wptreehouse_badges_shortcode( $atts, $content = null ) {
+
+}
+add_shortcode( 'wptreehouse_badges', 'wptreehouse_badges_shortcode' );
 
 function wptreehouse_badges_get_profile( $wptreehouse_username ) {
   $json_feed_url = "https://teamtreehouse.com/" . $wptreehouse_username . ".json";
