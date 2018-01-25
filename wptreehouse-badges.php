@@ -145,6 +145,19 @@ function wptreehouse_badges_shortcode( $atts, $content = null ) {
     if( $tooltip == 'on' ) $tooltip = 1;
     if( $tooltip == 'off' ) $tooltip = 0;
 
+    $display_tooltip = $tooltip;
+
+    $options = get_option( 'wptreehouse_badges' );
+    $wptreehouse_profile = $options['wptreehouse_profile'];
+
+    ob_start();
+
+    require( 'inc/front-end.php' );
+
+    $content = ob_get_clean();
+
+    return $content;
+
 }
 add_shortcode( 'wptreehouse_badges', 'wptreehouse_badges_shortcode' );
 
