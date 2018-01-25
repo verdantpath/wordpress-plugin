@@ -135,6 +135,16 @@ add_action( 'widgets_init', 'wptreehouse_badges_register_widgets' );
 
 function wptreehouse_badges_shortcode( $atts, $content = null ) {
 
+    global $post;
+
+    extract( shortcode_atts( array(
+      'num_badges' => '8',
+      'tooltip' => 'on'
+    ), $atts ) );
+
+    if( $tooltip == 'on' ) $tooltip = 1;
+    if( $tooltip == 'off' ) $tooltip = 0;
+
 }
 add_shortcode( 'wptreehouse_badges', 'wptreehouse_badges_shortcode' );
 
