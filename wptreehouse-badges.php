@@ -172,6 +172,13 @@ function wptreehouse_badges_get_profile( $wptreehouse_username ) {
   return $wptreehouse_profile;
 }
 
+function wptreehouse_badges_refresh_profile() {
+
+  $options = get_option( 'wptreehouse_badges' );
+  $last_updated = $options['last_updated'];
+
+}
+
 function wptreehouse_badges_backend_styles() {
   wp_enqueue_style( 'wptreehouse_badges_backend_css', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
 }
