@@ -177,6 +177,10 @@ function wptreehouse_badges_refresh_profile() {
   $options = get_option( 'wptreehouse_badges' );
   $last_updated = $options['last_updated'];
 
+  $current_time = time();
+
+  $update_difference = $current_time - $last_updated;
+
 }
 
 function wptreehouse_badges_backend_styles() {
