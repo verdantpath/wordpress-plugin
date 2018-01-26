@@ -181,6 +181,12 @@ function wptreehouse_badges_refresh_profile() {
 
   $update_difference = $current_time - $last_updated;
 
+  if() {
+
+  } else {
+
+  }
+
 }
 
 function wptreehouse_badges_backend_styles() {
