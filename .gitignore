@@ -6,6 +6,4 @@ images
 #files
 thumbs.db
 .DS_Store
-example_treehouse-badges.php
-example_treehouse-badges.js
 test.php
